@@ -1,0 +1,70 @@
+<p style="text-align:center"><b><span><H1>{{sessionStorage.getItem('currentUser') !== null ? sessionStorage.getItem('currentUser') + ', welcome to the BCBS Portal!!' : "Invalid User "}} </H1></span></b></p>
+<hr/>
+
+<div class="container" ngNativeValidate *ngIf="sessionStorage.getItem('currentUser') !== null">
+  <H3><b><span>Send Email Form</span></b></H3>
+    <div class="row mt-5">
+      <div class="col-md-4">
+        <div class="mb-3">
+          <label for="formFile" class="form-label"><u>Send Email with an Attachment</u></label>
+          <p>
+            <input type="text" name="toEmail" [(ngModel)]="toEmail" id="toEmail" placeholder="To" required>
+          </p>
+          <p>
+            <input type="text" name="fromEmail" [(ngModel)]="fromEmail" id="fromEmail" placeholder="From" required>
+          </p>
+          <input (change)="this.onFilechange($event)" class="form-control" type="file" id="formFile">
+          <button (click)="this.upload()" type="button" class="btn btn-primary mt-3">Upload</button>
+        </div>
+      </div>
+    </div>
+
+  <hr/>
+  <H3><b><span>Sent Emails List</span></b></H3>
+
+    <div class="example-header">
+      <mat-form-field> 
+        <input matInput (keyup)="applyFilter($event)" placeholder="Filter">
+      </mat-form-field>
+    </div>
+    
+    <div class="example-container mat-elevation-z8">
+    
+      <mat-table [dataSource]="dataSource" matSort>
+    
+        <!-- ID Column -->
+        <ng-container matColumnDef="id">
+          <mat-header-cell *matHeaderCellDef mat-sort-header > ID </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.id}} </mat-cell>
+        </ng-container>
+    
+        <!-- From Email Column -->
+        <ng-container matColumnDef="fromEmail">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> FROM-EMAIL </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.fromEmail}} </mat-cell>
+        </ng-container>
+    
+        <!-- To Email Column -->
+        <ng-container matColumnDef="toEmail">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> TO-EMAIL </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.toEmail}} </mat-cell>
+        </ng-container>
+    
+        <!-- Uploaded User Column -->
+        <ng-container matColumnDef="uploadUser">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> UPLOADED-USER </mat-header-cell>
+          <mat-cell *matCellDef="let row" > {{row.uploadUser}} </mat-cell>
+        </ng-container>
+
+         <!-- Uploaded Date Column -->
+         <ng-container matColumnDef="uploadDate">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> UPLOADED-DATE </mat-header-cell>
+          <mat-cell *matCellDef="let row" > {{row.uploadDate}} </mat-cell>
+        </ng-container>
+    
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;">
+        </mat-row>
+      </mat-table>
+    </div>
+   </div>
