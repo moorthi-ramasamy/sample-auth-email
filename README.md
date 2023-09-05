@@ -1,7 +1,8 @@
 # Solution
 ## Frontend-UI (Angular & Material) - userauth-angular-client (User Authentication and Email Notifications)
 1. Angular Core: 16.2.0
-2. Home Page URL: http://localhost:4200/login
+2. Home Page URL: http://localhost:4200/
+3. Test Users to log in - User/Pwd: moorthi123/test and john123/test
 
 ## Backend (SpringBoot & MongoDB) - userauth-springboot-mdb (User Authentication and Email Notifications)
 1. JDK: 20
