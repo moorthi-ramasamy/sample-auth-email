@@ -26,7 +26,8 @@ export class EmailComponent  implements OnInit {
 
   ngOnInit(): void {
     this.getAllSentEmails();
-    console.log('ngOnInit - this.emails ', this.emails)
+    console.log('ngOnInit - this.emails ', this.emails);
+    this.dataSource = new MatTableDataSource(this.emails);
     
   }
 
@@ -63,6 +64,7 @@ export class EmailComponent  implements OnInit {
     .subscribe(emails => {
       this.emails = emails;
       this.dataSource = new MatTableDataSource(this.emails);
+      this.dataSource.sort = this.sort;
     });
   }
 }
