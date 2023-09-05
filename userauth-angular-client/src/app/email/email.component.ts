@@ -12,7 +12,7 @@ import { MatSort } from '@angular/material/sort';
 export class EmailComponent  implements OnInit {
   public sessionStorage = sessionStorage;
   emails: Email[] = [];
-  displayedColumns = ['id', 'fromEmail', 'toEmail', 'uploadUser', 'uploadDate'];
+  displayedColumns = ['id', 'fromEmail', 'toEmail', 'uploadUser', 'uploadDate', 'fileName'];
   dataSource: MatTableDataSource<Email> = new MatTableDataSource();
   @ViewChild(MatSort) sort: MatSort = new MatSort();
   toEmail: string='';

@@ -5,4 +5,5 @@ export class Email{
     uploadUser: string = '';
     uploadDate: string = '';
     attachment!: BinaryData;
+    fileName: string = '';
 }

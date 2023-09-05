@@ -31,6 +31,7 @@ public class EmailServiceImpl implements EmailService {
 		email.setToEmail(emailRequest.getToEmailAddress());
 		email.setUploadUser(emailRequest.getUploadUser());
 		email.setUploadDate(emailRequest.getUploadDate());
+		email.setFileName(emailRequest.getFileName());
 		try {
 			email.setAttachment(new Binary(emailRequest.getFileAttachment().getBytes()));
 		} catch (IOException e) {

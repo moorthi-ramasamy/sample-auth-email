@@ -41,6 +41,7 @@ public class EmailApi {
             log.info(method + "emailAttachmentRequest " + emailAttachmentRequest);
             if(null != fileAttachment ) {
                 emailAttachmentRequest.setFileAttachment(fileAttachment);
+                emailAttachmentRequest.setFileName(fileAttachment.getOriginalFilename());
             }
             boolean success = emailService.sendEmail(emailAttachmentRequest);
             if (success) {

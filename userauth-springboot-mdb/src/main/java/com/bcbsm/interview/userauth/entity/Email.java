@@ -21,5 +21,7 @@ public class Email {
     private String toEmail;
     private String uploadUser;
     private String uploadDate;
+
+    private String fileName;
     private Binary attachment;
 }

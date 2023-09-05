@@ -28,6 +28,7 @@ public class EmailRequest implements Serializable {
     protected String toEmailAddress; //accepts comma or semi-colon delimited email addresses.
     protected String uploadUser;
     protected String uploadDate;
+    protected String fileName;
 
     //Optional
     protected transient MultipartFile fileAttachment;

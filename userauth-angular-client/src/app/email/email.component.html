@@ -61,6 +61,12 @@
           <mat-header-cell *matHeaderCellDef mat-sort-header> UPLOADED-DATE </mat-header-cell>
           <mat-cell *matCellDef="let row" > {{row.uploadDate}} </mat-cell>
         </ng-container>
+
+         <!-- Uploaded Date Column -->
+         <ng-container matColumnDef="fileName">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> ATTACHMENT-NAME </mat-header-cell>
+          <mat-cell *matCellDef="let row" > {{row.fileName}} </mat-cell>
+        </ng-container>
     
         <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
         <mat-row *matRowDef="let row; columns: displayedColumns;">
