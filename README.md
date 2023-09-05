@@ -1,3 +1,14 @@
+# Solution
+## Frontend-UI (Angular & Material) - userauth-angular-client (User Authentication and Email Notifications)
+1. Angular Core: 16.2.0
+2. Home Page URL: http://localhost:4200/login
+
+## Backend (SpringBoot & MongoDB) - userauth-springboot-mdb (User Authentication and Email Notifications)
+1. JDK: 20
+2. SpringBoot: 3.1.3
+3. MongoDB: Atlas Azure cloud version (https://cloud.mongodb.com/v2/64f3b7ac78396676304ebb22#/clusters/detail/MoorthiCluster0)
+4. Swagger-URL: http://localhost:8080/swagger-ui/index.html
+
 # BCBSM Full Stack Developer Candidate Coding Exercise
 
 ## Requirements:
